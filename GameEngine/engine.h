@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Window.h"
+#include "Input.h"
 #include <vector>
 #include <algorithm>
 
@@ -16,8 +17,11 @@ public:
 	void Draw();
 	Sprite* CreateSprite(std::string filepath);
 	void DestroySprite(Sprite* sprite);
+
+	bool IsKeyPressed(Key key);
 private:
 	Window* m_Window = nullptr;
 	bool m_isRunning = false;
 	std::vector<Sprite*> m_Sprites;
+	Input* m_Input = nullptr;
 };

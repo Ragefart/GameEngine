@@ -5,12 +5,14 @@ Engine::Engine(const int width, const int height, std::string title)
 	//this is called when the object is created
 	m_isRunning = true;
 	m_Window = new Window(width, height, title);
+	m_Input = new Input();
 }
 
 Engine::~Engine()
 {
 	//this is called when the object is destroyed
 	m_isRunning = false;
+	delete m_Input;
 	delete m_Window;
 }
 
@@ -43,4 +45,9 @@ void Engine::DestroySprite(Sprite* sprite)
 {
 	m_Sprites.erase(std::remove(m_Sprites.begin(), m_Sprites.end(), sprite), m_Sprites.end());
 	delete sprite;
+}
+
+bool Engine::IsKeyPressed(Key key)
+{
+	return m_Input->IsKeyPressed(key);
 }
