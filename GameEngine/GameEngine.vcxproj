@@ -95,12 +95,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Lib>
       <AdditionalLibraryDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-windows.lib;sfml-system.lib;opengl32.lib;winmm.lib;gdb32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;winmm.lib;gdi32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,12 +109,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Lib>
       <AdditionalLibraryDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-windows.lib;sfml-system.lib;opengl32.lib;winmm.lib;gdb32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;opengl32.lib;winmm.lib;gdi32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -125,7 +125,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -134,7 +134,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-windows.lib;sfml-system.lib;opengl32.lib;winmm.lib;gdb32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;winmm.lib;gdi32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -145,7 +145,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -154,14 +154,16 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>C:\Users\Tobi\Documents\Visual Studio 2017\Projects\GameEngine\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-windows.lib;sfml-system.lib;opengl32.lib;winmm.lib;gdb32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-s.lib;sfml-window-s.lib;sfml-system-s.lib;opengl32.lib;winmm.lib;gdi32.lib;freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="engine.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="engine.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
