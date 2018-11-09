@@ -6,6 +6,7 @@ Engine::Engine(const int width, const int height, std::string title)
 	m_isRunning = true;
 	m_Window = new Window(width, height, title);
 	m_Input = new Input();
+	m_Time = new Time();
 }
 
 Engine::~Engine()
@@ -14,6 +15,7 @@ Engine::~Engine()
 	m_isRunning = false;
 	delete m_Input;
 	delete m_Window;
+	delete m_Time;
 }
 
 void Engine::Update()
@@ -22,6 +24,8 @@ void Engine::Update()
 		m_isRunning = false;
 		return;
 	}
+
+	m_Time->Restart();
 }
 
 void Engine::Draw()
@@ -50,4 +54,9 @@ void Engine::DestroySprite(Sprite* sprite)
 bool Engine::IsKeyPressed(Key key)
 {
 	return m_Input->IsKeyPressed(key);
+}
+
+const float Engine::GetElapsedTimeAsSeconds()
+{
+	return m_Time->GetElapsedTimeAsSeconds();
 }

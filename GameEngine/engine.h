@@ -2,6 +2,7 @@
 
 #include "Window.h"
 #include "Input.h"
+#include "Time.h"
 #include <vector>
 #include <algorithm>
 
@@ -19,7 +20,9 @@ public:
 	void DestroySprite(Sprite* sprite);
 
 	bool IsKeyPressed(Key key);
+	const float GetElapsedTimeAsSeconds();
 private:
+	Time* m_Time = nullptr;
 	Window* m_Window = nullptr;
 	bool m_isRunning = false;
 	std::vector<Sprite*> m_Sprites;
