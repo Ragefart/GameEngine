@@ -8,13 +8,5 @@
 
 int EngineMain()
 {
-	int a = 5;
-	
-	Engine* engine = new Engine();
-
-	Engine& engineRef = engine;
-
-	delete engine;
-
 	return 0;
 }
