@@ -21,3 +21,26 @@ void Engine::Update()
 		return;
 	}
 }
+
+void Engine::Draw()
+{
+	m_Window->BeginDraw();
+	for (Sprite* sprites : m_Sprites)
+	{
+		m_Window->Draw(sprites);
+	}
+	m_Window->EndDraw();
+}
+
+Sprite* Engine::CreateSprite(std::string filepath)
+{
+	Sprite* sprite = new Sprite(filepath);
+	m_Sprites.push_back(sprite);
+	return sprite;
+}
+
+void Engine::DestroySprite(Sprite* sprite)
+{
+	m_Sprites.erase(std::remove(m_Sprites.begin(), m_Sprites.end(), sprite), m_Sprites.end());
+	delete sprite;
+}

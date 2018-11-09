@@ -20,8 +20,7 @@ Window::~Window()
 
 bool Window::Update()
 {
-	//clear everything drawn in a specific color
-	m_Window->clear(sf::Color::Black);
+	
 	//create event object
 	sf::Event event;
 	//while we have events to poll, write something into "event" and handle it
@@ -34,8 +33,25 @@ bool Window::Update()
 			return false;
 		}
 	}
-	//displays everything again
-	m_Window->display();
 	//return true so that we say that the window is still open
 	return true;
+}
+
+void Window::BeginDraw()
+{
+	//clear draws everything in a specific color
+	m_Window->clear(sf::Color::Black);
+}
+
+void Window::EndDraw()
+{	
+	//displays everything again
+	m_Window->display();
+}
+
+void Window::Draw(Sprite* sprite)
+{
+	const sf::Sprite& spriteREF = *sprite->Getsprite();
+
+	m_Window->draw(spriteREF);
 }
