@@ -8,6 +8,7 @@ namespace sf  //sfml namespace
 
 #include <string>
 #include "Sprite.h"
+#include "Text.h"
 using namespace std;
 
 class Window
@@ -22,6 +23,7 @@ public:
 	void EndDraw();
 	//draws a specific sprite
 	void Draw(Sprite* sprite);
+	void Draw(Text* text);
 private:
 	sf::RenderWindow* m_Window = nullptr;
 };

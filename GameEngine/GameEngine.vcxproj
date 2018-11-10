@@ -161,6 +161,7 @@
     <ClInclude Include="engine.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Sprite.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
@@ -168,6 +169,7 @@
     <ClCompile Include="engine.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>

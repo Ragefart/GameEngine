@@ -18,6 +18,7 @@ Time::~Time()
 
 void Time::Restart()
 {
+	//restart the clock and write the time passed since last start into m_DeltaTime
 	m_DeltaTime = m_Clock->restart().asSeconds();
 }
 

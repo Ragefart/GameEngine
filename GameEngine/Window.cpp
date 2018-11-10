@@ -55,3 +55,10 @@ void Window::Draw(Sprite* sprite)
 
 	m_Window->draw(spriteREF);
 }
+
+void Window::Draw(Text* text) 
+{
+	const sf::Text& textREF = *text->GetText();
+
+	m_Window->draw(textREF);
+}

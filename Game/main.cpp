@@ -9,11 +9,16 @@
 int EngineMain()
 {
 	Engine* engine = new Engine(640, 480, "Test");
-	Sprite* sprite = engine->CreateSprite("smile.png");
+	Sprite* sprite = engine->CreateSprite("player.png");
+	Text* text = engine->CreateText("Hyperspace.otf");
+	text->SetText("Score 100");
+	text->SetColor(255, 255, 255, 255);
+	text->SetPosition(10.0f, 50.0f);
+	text->SetSize(24);
 	sprite->Move(360, 240);
 	float accumolator = 0.f;
 	const float dt = 1 / 60.f;
-	while (engine->isRunning()) {
+	while (engine->IsRunning()) {
 		engine->Update();
 
 		const float deltaTime = engine->GetElapsedTimeAsSeconds();
@@ -39,6 +44,7 @@ int EngineMain()
 			engine->Draw();
 		}		
 	}
+	delete text;
 	delete sprite;
 	delete engine;
 	return 0;
