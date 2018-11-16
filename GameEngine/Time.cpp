@@ -1,20 +1,14 @@
 #include "Time.h"
 #include <SFML/System.hpp>
 
-
-
 Time::Time()
 {
-	m_Clock = new sf::Clock();
-
+	m_Clock = std::make_unique<sf::Clock>();
 }
-
 
 Time::~Time()
 {
-	delete m_Clock;
 }
-
 
 void Time::Restart()
 {

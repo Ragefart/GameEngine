@@ -1,7 +1,6 @@
 #pragma once
 
-
-
+//copied from SFML/Window/Keyboard.hpp
 enum Key
 {
 	Unknown = -1, ///< Unhandled key
@@ -121,10 +120,8 @@ enum Key
 class Input
 {
 public:
-	Input();
-	virtual ~Input();
 
-	bool IsKeyPressed(Key key);
+public:
+	//returns whether a key is pressed or not
+	static bool IsKeyPressed(Key key);
 };
-
-

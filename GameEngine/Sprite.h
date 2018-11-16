@@ -2,22 +2,31 @@
 
 #include <string>
 
+//forward declare
 namespace sf
 {
-	class Texture;
 	class Sprite;
 }
 
 class Sprite
 {
 public:
-	Sprite(std::string filepath);
-	virtual ~Sprite();
+	//constructor with filepath to the sprite file
+	Sprite(std::string filePath);
+	~Sprite();
 
-	const sf::Sprite* Getsprite() { return m_Sprite; }
-	void Move(float x, float y);
+public:
+	//return the sprite for the window
+	const std::shared_ptr<sf::Sprite> GetSprite() const { return m_Sprite; }
+	//SetPosition the Sprite
+	void SetPosition(const float X, const float Y);
+	void GetPosition(float& X, float& Y);
+	void SetRotation(const float rotationInDegree);
+	void GetRotation(float& rotationInDegree);
+	//check if this sprite is colliding with another Sprite
+	const bool IsCollidingWith(const std::shared_ptr<Sprite>& otherSprite) const;
+	const bool IsCollidingWith(const float top, const float left, const float width, const float height) const;
+
 private:
-	sf::Texture* m_Texture = nullptr;
-	sf::Sprite* m_Sprite = nullptr;
+	std::shared_ptr<sf::Sprite> m_Sprite = nullptr;
 };
-

@@ -1,4 +1,6 @@
 #pragma once
+#include <memory>
+
 //forward declare clock
 namespace sf
 {
@@ -17,7 +19,7 @@ public:
 
 private:
 	//sfml clock to get the correct elapsed time
-	sf::Clock* m_Clock = nullptr;
+	std::unique_ptr<sf::Clock> m_Clock;
 	//time passed since restart
 	float m_DeltaTime = 0.f;
 };
