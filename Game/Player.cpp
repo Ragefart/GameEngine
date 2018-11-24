@@ -1,7 +1,7 @@
 #include "Player.h"
 #include <algorithm>
 
-Player::Player(std::shared_ptr<Sprite> playerSprite, const float boundary_X, const float boundary_Y)
+Player::Player(std::shared_ptr<Sprite>& playerSprite, const float boundary_X, const float boundary_Y)
 {
 	m_Sprite = playerSprite;
 	m_Boundary_X = boundary_X;
@@ -10,7 +10,6 @@ Player::Player(std::shared_ptr<Sprite> playerSprite, const float boundary_X, con
 
 Player::~Player()
 {
-	//dont delete playerSprite here, because we haven't initialized it here
 }
 
 void Player::SetPosition(const float X, const float Y)
@@ -79,7 +78,7 @@ void Player::HandleInput(const std::shared_ptr<Engine>& engine, const float dt)
 
 	if (m_IsShooting)
 	{
-		m_ShootCooldown = 0.5f;
+		m_ShootCooldown = 0.25f;
 	}
 
 	m_IsShooting = engine->IsKeyPressed(Key::Space) && m_ShootCooldown == 0.0f;

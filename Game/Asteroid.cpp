@@ -1,6 +1,6 @@
 #include "Asteroid.h"
 
-Asteroid::Asteroid(std::shared_ptr<Sprite> sprite, const float boundary_X, const float boundary_Y)
+Asteroid::Asteroid(std::shared_ptr<Sprite>& sprite, const float boundary_X, const float boundary_Y)
 {
 	m_Sprite = sprite;
 	m_Boundary_X = boundary_X;
@@ -9,7 +9,6 @@ Asteroid::Asteroid(std::shared_ptr<Sprite> sprite, const float boundary_X, const
 
 Asteroid::~Asteroid()
 {
-	//dont delete sprite here, because we haven't initialized it here
 }
 
 void Asteroid::SetPosition(const float X, const float Y)

@@ -6,14 +6,14 @@
 class Bullet
 {
 public:
-	Bullet(std::shared_ptr<Sprite> sprite, const std::shared_ptr<Player>& player, const float boundary_X, const float boundary_Y);
+	Bullet(std::shared_ptr<Sprite>& sprite, const std::shared_ptr<Player>& player, const float boundary_X, const float boundary_Y);
 	~Bullet();
 
 public:
 	//handle input and update the Bullet
 	void Update(const float dt);
 
-	std::shared_ptr<Sprite> GetSprite() { return m_Sprite; }
+	std::shared_ptr<Sprite>& GetSprite() { return m_Sprite; }
 
 	//check if the bullet should be destroyed now after his lifetime is over
 	const bool IsLifeTimeOver() { return m_LifeTime < 0.0f; }

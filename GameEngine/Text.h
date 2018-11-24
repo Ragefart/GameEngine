@@ -26,10 +26,10 @@ public:
 	//change the position of the text
 	void SetPosition(const float X, const float Y);
 	//Return the text so that SFML can draw it
-	const std::shared_ptr<sf::Text> GetText() { return m_Text; }
+	const std::shared_ptr<sf::Text>& GetText() { return m_Text; }
 private:
 	//SFML Font
 	std::unique_ptr<sf::Font> m_Font;
 	//SFML Text
-	std::shared_ptr<sf::Text> m_Text = nullptr;
+	std::shared_ptr<sf::Text> m_Text;
 };

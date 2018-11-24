@@ -14,7 +14,6 @@ Text::Text(const std::string fontFilePath)
 
 Text::~Text()
 {
-
 }
 
 void Text::SetText(const std::string text)

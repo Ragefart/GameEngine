@@ -1,15 +1,15 @@
 #include "Bullet.h"
 
-Bullet::Bullet(std::shared_ptr<Sprite> sprite, const std::shared_ptr<Player>& player, const float boundary_X, const float boundary_Y)
+Bullet::Bullet(std::shared_ptr<Sprite>& sprite, const std::shared_ptr<Player>& player, const float boundary_X, const float boundary_Y)
 {
 	m_Sprite = sprite;
 	m_Boundary_X = boundary_X;
 	m_Boundary_Y = boundary_Y;
-	m_LifeTime = 3.0f;
+	m_LifeTime = 1.0f;
 
 	//also initialize the velocity based on the player
 	const float PI = 3.141592654f;
-	const float bulletSpeedPerSecond = 200.0f;
+	const float bulletSpeedPerSecond = 300.0f;
 	
 	//we get the values from the player
 	float rotationInDegree = 0.f;

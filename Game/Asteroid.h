@@ -5,7 +5,7 @@
 class Asteroid
 {
 public:
-	Asteroid(std::shared_ptr<Sprite> sprite, const float boundary_X, const float boundary_Y);
+	Asteroid(std::shared_ptr<Sprite>& sprite, const float boundary_X, const float boundary_Y);
 	~Asteroid();
 
 public:
@@ -18,10 +18,10 @@ public:
 	//handle input and update the Asteroid
 	void Update(const float dt);
 
-	std::shared_ptr<Sprite> GetSprite() { return m_Sprite; }
+	std::shared_ptr<Sprite>& GetSprite() { return m_Sprite; }
 private:
 	//sprite used to draw and change the position
-	std::shared_ptr<Sprite> m_Sprite;
+	std::shared_ptr<Sprite> m_Sprite = nullptr;
 	//velocity of the player
 	float m_Velocity_X = 0.f;
 	float m_Velocity_Y = 0.f;

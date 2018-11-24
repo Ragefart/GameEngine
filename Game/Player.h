@@ -5,7 +5,7 @@
 class Player
 {
 public:
-	Player(std::shared_ptr<Sprite> playerSprite, const float boundary_X, const float boundary_Y);
+	Player(std::shared_ptr<Sprite>& playerSprite, const float boundary_X, const float boundary_Y);
 	~Player();
 
 public:
@@ -19,7 +19,7 @@ public:
 	void GetVelocity(float& velocity_X, float& velocity_Y) const;
 	void GetRotation(float& rotationInDegree) const;
 
-	std::shared_ptr<Sprite> GetSprite() { return m_Sprite;  }
+	std::shared_ptr<Sprite>& GetSprite() { return m_Sprite;  }
 	const bool IsShooting() { return m_IsShooting; }
 
 private:

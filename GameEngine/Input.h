@@ -120,8 +120,6 @@ enum Key
 class Input
 {
 public:
-
-public:
 	//returns whether a key is pressed or not
 	static bool IsKeyPressed(Key key);
 };

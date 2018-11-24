@@ -1,7 +1,6 @@
 #include "Input.h"
 #include <SFML/Window.hpp>
 
-
 bool Input::IsKeyPressed(Key key)
 {
 	//cast the key to a key which can be understand by sfml

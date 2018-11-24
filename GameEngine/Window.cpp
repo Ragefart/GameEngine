@@ -14,7 +14,6 @@ Window::Window(const int width, const int height, const std::string title)
 //Destructor
 Window::~Window()
 {
-
 }
 
 bool Window::Update()
@@ -47,18 +46,12 @@ void Window::EndDraw()
 	m_Window->display();
 }
 
-void Window::Draw(std::shared_ptr<Sprite>& sprite)
+void Window::Draw(const std::shared_ptr<sf::Sprite>& sprite)
 {
-	//create a reference to the sfml sprite of sprite
-	const sf::Sprite& spriteREF = *sprite->GetSprite();
-	//draw the sprite in the window
-	m_Window->draw(spriteREF);
+	m_Window->draw(*sprite);
 }
 
-void Window::Draw(std::shared_ptr<Text>& text)
+void Window::Draw(const std::shared_ptr<sf::Text>& text)
 {
-	//create a reference to the sfml text of text
-	const sf::Text& textREF = *text->GetText();
-	//draw the text in the window
-	m_Window->draw(textREF);
+	m_Window->draw(*text);
 }
